@@ -1,0 +1,457 @@
+/* Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container için Merkezleme */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Bölümü */
+header {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+header.scrolled {
+    background: #1a252f;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 4px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #2c3e50;
+    background: #ecf0f1;
+}
+
+/* Mobil Menü */
+@media (max-width: 768px) {
+    header nav {
+        float: none;
+        margin-top: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero Bölümü */
+.hero {
+    background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+    color: white;
+    padding: 150px 0 80px 0; /* Header yüksekliği dikkate alındı */
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.6);
+}
+
+.hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero .btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.hero .btn:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Animasyonlar */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hakkımızda Bölümü */
+.about {
+    background: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #e74c3c;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    line-height: 1.8;
+    color: #555;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Kitaplar Bölümü */
+.books {
+    background: #f9f9f9;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.books h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.books h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #e74c3c;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.book-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.book-card h3 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.book-card p {
+    font-size: 1rem;
+    color: #777;
+    margin: 5px 0;
+}
+
+.book-card button {
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.book-card button:hover {
+    background: #34495e;
+    transform: translateY(-3px);
+}
+
+/* İletişim Bölümü */
+.contact {
+    background: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #e74c3c;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact label {
+    font-size: 1.1rem;
+    text-align: left;
+    color: #333;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+    outline: none;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact button {
+    padding: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.contact button:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Footer Bölümü */
+footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer a {
+    color: #e74c3c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #c0392b;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 992px) {
+    header .logo {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .books h2,
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .book-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-card {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 120px 0 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .books h2,
+    .about h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+}

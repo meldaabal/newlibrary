@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kütüphane Yönetim Sistemi</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- Header Bölümü -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Kütüphane Sistemi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Anasayfa</a></li>
+                    <li><a href="#about">Hakkımızda</a></li>
+                    <li><a href="#books">Kitaplar</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Bölümü -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Kütüphane Yönetim Sistemimize Hoş Geldiniz</h2>
+            <p>Bir kitap dünyasını keşfedin ve kütüphanenizi zahmetsizce yönetin.</p>
+            <a href="#books" class="btn">Kitaplara Göz At</a>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Bölümü -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Hakkımızda</h2>
+            <p>Kütüphane sistemimiz, her ölçekteki kütüphane için kitap yönetimini kolaylaştırmak için tasarlandı. 
+                Kitaplarınızı düzenlemenize, takip etmenize ve ödünç almanıza yardımcı oluyoruz.</p>
+        </div>
+    </section>
+
+    <!-- Kitaplar Bölümü -->
+    <section id="books" class="books">
+        <div class="container">
+            <h2>Kitap Koleksiyonumuz</h2>
+            <div class="book-list">
+                <!-- Kitap kartları dinamik olarak JavaScript ile eklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Bizimle İletişime Geçin</h2>
+            <form action="#" method="POST">
+                <label for="name">Adınız</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-posta</label>
+                <input type="email" id="email" name="email" required>
+                <textarea id="message" name="message" placeholder="Mesajınız..." required></textarea>
+                <button type="submit" class="btn">Mesaj Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Bölümü -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kütüphane Yönetim Sistemi | Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+</body>
+
+</html>

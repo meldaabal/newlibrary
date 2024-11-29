@@ -1,0 +1,49 @@
+INSERT INTO yazarlar (id, ad, soyad, dogum_tarihi) VALUES
+(1, 'Orhan', 'Pamuk', '1952-06-07'),
+(2, 'İlber', 'Ortaylı', '1947-05-21'),
+(3, 'Ahmet', 'Ümit', '1960-11-13'),
+(4, 'Elif', 'Şafak', '1971-10-25'),
+(5, 'Yunus', 'Emre', '1240-01-01'),
+(6, 'Isaac', 'Newton', '1643-01-04'),
+(7, 'Albert', 'Einstein', '1879-03-14'),
+(8, 'Stephen', 'Hawking', '1942-01-08'),
+(9, 'Murat', 'Mungan', '1985-12-15');
+
+INSERT INTO kategoriler (id, ad) VALUES
+(1, 'Roman'),
+(2, 'Bilim'),
+(3, 'Tarih'),
+(4, 'Sanat'),
+(5, 'Felsefe'),
+(6, 'Teknoloji'),
+(7, 'Edebiyat'),
+(8, 'Çocuk'),
+(9, 'Biyografi');
+
+INSERT INTO kitaplar (id, ad, yazar_id, kategori_id, yayin_yili, adet, eklenme_tarihi) VALUES
+(1, 'Masumiyet Müzesi', 1, 1, 2008, 5, '2024-11-22 17:19:09.271784'),
+(2, 'Bir Ömür Nasıl Yaşanır', 2, 3, 2019, 3, '2024-11-22 17:19:09.271784'),
+(3, 'Felsefenin Kısa Tarihi', 5, 5, 1995, 4, '2024-11-22 17:19:09.271784'),
+(4, 'Simyacı', 3, 1, 1988, 6, '2024-11-22 17:19:09.271784'),
+(5, 'Aşk', 4, 1, 2003, 8, '2024-11-22 17:19:09.271784'),
+(6, 'İki Şehrin Hikayesi', 7, 1, 1859, 7, '2024-11-22 17:19:09.271784'),
+(7, 'Zamanın Kısa Tarihi', 6, 2, 1988, 5, '2024-11-22 17:19:09.271784'),
+(8, 'Kozmos', 6, 2, 1980, 10, '2024-11-22 17:19:09.271784'),
+(9, 'Evrenin Yapısı', 8, 2, 1988, 4, '2024-11-22 17:19:09.271784'),
+(10, 'Çocuklar İçin Felsefe', 9, 6, 2010, 5, '2024-11-22 17:19:09.271784');
+
+INSERT INTO kullanicilar (id, ad, eposta, sifre, rol, kayit_tarihi) VALUES
+(1, 'Ahmet Yılmaz', 'ahmet.yilmaz@email.com', 'hashed_password_1', 'uye', '2024-11-22 17:28:11.912338'),
+(2, 'Mehmet Kaya', 'mehmet.kaya@email.com', 'hashed_password_2', 'yonetici', '2024-11-22 17:28:11.912338'),
+(3, 'Ayşe Demir', 'ayse.demir@email.com', 'hashed_password_3', 'uye', '2024-11-22 17:28:11.912338'),
+(4, 'Fatma Çelik', 'fatma.celik@email.com', 'hashed_password_4', 'yonetici', '2024-11-22 17:28:11.912338'),
+(5, 'Hüseyin Şahin', 'huseyin.sahin@email.com', 'hashed_password_5', 'uye', '2024-11-22 17:28:11.912338');
+
+INSERT INTO odunc_islemleri (id, kitap_id, kullanici_id, odunc_tarihi, iade_tarihi, durum, notlar) VALUES
+(1, 1, 1, '2024-10-01 00:00:00', '2024-10-15 00:00:00', 'iade', 'Zamanında iade edildi.'),
+(2, 2, 2, '2024-09-25 00:00:00', '2024-10-05 00:00:00', 'iade', 'Kitap gayet iyi durumdaydı.'),
+(3, 3, 3, '2024-10-03 00:00:00', '2024-10-17 00:00:00', 'odunc', 'Felsefe kitabı, 2 hafta süreyle ödünç alındı.'),
+(4, 4, 4, '2024-10-10 00:00:00', NULL, 'odunc', 'Roman kitabı ödünç alındı.'),
+(5, 5, 5, '2024-09-20 00:00:00', '2024-09-30 00:00:00', 'iade', 'Elif Şafak kitabi cok begenildi.');
+
+
